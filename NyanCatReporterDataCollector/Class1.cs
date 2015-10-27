@@ -9,6 +9,7 @@ using Microsoft.VisualStudio.TestTools.Execution;
 
 namespace NyanCatReporterDataCollector
 {
+    [DataCollectorTypeUri("datacollector://Nyan/Cat/")]
     [DataCollectorFriendlyName("Collect data for NyanCat reporter", false)]
     public class TestRunDataCollector : DataCollector
     {

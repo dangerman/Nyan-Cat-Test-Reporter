@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 using Microsoft.VisualStudio.TestTools.Common;
 using Microsoft.VisualStudio.TestTools.Execution;
 
 namespace NyanCatReporterDataCollector
 {
-    [DataCollectorTypeUri("datacollector://Nyan/Cat/")]
-    [DataCollectorFriendlyName("Collect data for NyanCat reporter", false)]
+    [DataCollectorTypeUri("datacollector://Nyan/Cat/1.0")]
+    [DataCollectorFriendlyName("NyanCat Reporter", false)]
     public class TestRunDataCollector : DataCollector
     {
         private DataCollectionEvents _dataEvents;
@@ -39,7 +36,7 @@ namespace NyanCatReporterDataCollector
 
         private void OnTestCaseEnd(object sender, TestCaseEndEventArgs e)
         {
-            Console.WriteLine(e.TestOutcome);
+            throw new NotImplementedException();
         }
 
         private void OnTestCaseStart(object sender, TestCaseStartEventArgs e)
@@ -49,11 +46,12 @@ namespace NyanCatReporterDataCollector
 
         private void OnSessionEnd(object sender, SessionEndEventArgs e)
         {
-            Console.WriteLine("Session ended");
+            throw new NotImplementedException();
         }
 
         private void OnSesstionStart(object sender, SessionStartEventArgs e)
         {
+            //MessageBox.Show("session started");
             throw new NotImplementedException();
         }
     }

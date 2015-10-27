@@ -31,7 +31,8 @@
         </Configuration>
       </DataCollector>
 
-      <DataCollector>
+      <DataCollector friendlyName="NyanCat Reporter" uri="datacollector://Nyan/Cat/1.0"
+                     assemblyQualifiedName="NyanCatReporterDataCollector.TestRunDataCollector, NyanCatReporterDataCollector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         
       </DataCollector>
 

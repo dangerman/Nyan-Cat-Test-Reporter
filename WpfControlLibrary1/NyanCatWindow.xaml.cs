@@ -33,12 +33,6 @@ namespace NyanCatDisplay
             _maxDistance = Convert.ToInt32(SystemParameters.VirtualScreenWidth);
 
             InitializeComponent();
-            FocusThisWindow();
-        }
-
-        private void FocusThisWindow()
-        {
-            Activate();
         }
 
         public int PassedCount

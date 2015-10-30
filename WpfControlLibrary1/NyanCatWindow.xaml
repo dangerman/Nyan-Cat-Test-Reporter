@@ -33,12 +33,13 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Foreground="SteelBlue" Padding="0 0 20 0" VerticalAlignment="Center">Other:</TextBlock>
-                <TextBlock Text="{Binding Path=Other, Mode=OneWay}" FontSize="50" Foreground="SteelBlue"/>
+                <TextBlock Text="{Binding Path=OtherCount, Mode=OneWay}" FontSize="50" Foreground="SteelBlue"/>
             </StackPanel>
             
         </StackPanel>
 
-
+        <Rectangle Grid.Column="1" Fill="orange" Height="70" VerticalAlignment="Center" Margin="-100 0 0 0"/>
         <local:NyanCatControl Grid.Column="1" Margin="{Binding Path=DistanceTravelledMargin, Mode=OneWay}"/>
+
     </Grid>
 </Window>

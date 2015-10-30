@@ -1,0 +1,44 @@
+﻿<Window x:Class="NyanCatDisplay.NyanCatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NyanCatDisplay"
+        mc:Ignorable="d"
+        Title="NyanCatWindow" Height="300" Width="300"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Topmost="True"
+        SizeToContent="Width"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Window.Background>
+        <DrawingBrush Opacity="0"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <StackPanel.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.8"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Green" Padding="0 0 20 0" VerticalAlignment="Center">Passed:</TextBlock>
+                <TextBlock Text="{Binding Path=PassedCount, Mode=OneWay}" FontSize="50" Foreground="Green"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Red" Padding="0 0 20 0" VerticalAlignment="Center">Failed:</TextBlock>
+                <TextBlock Text="{Binding Path=FailedCount, Mode=OneWay}" FontSize="50" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="SteelBlue" Padding="0 0 20 0" VerticalAlignment="Center">Other:</TextBlock>
+                <TextBlock Text="{Binding Path=Other, Mode=OneWay}" FontSize="50" Foreground="SteelBlue"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+
+        <local:NyanCatControl Grid.Column="1" Margin="{Binding Path=DistanceTravelledMargin, Mode=OneWay}"/>
+    </Grid>
+</Window>

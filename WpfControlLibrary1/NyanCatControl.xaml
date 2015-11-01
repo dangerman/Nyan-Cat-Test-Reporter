@@ -9,6 +9,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Image gif:ImageBehavior.AnimatedSource="original.gif"
-               gif:ImageBehavior.AnimateInDesignMode="True"/>
+               gif:ImageBehavior.AnimateInDesignMode="True" Stretch="None"/>
     </Grid>
 </UserControl>

@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:NyanCatDisplay"
         mc:Ignorable="d"
-        Title="NyanCatWindow" Height="300" Width="300"
+        Title="NyanCatWindow" Height="400" Width="600"
         AllowsTransparency="True"
         WindowStyle="None"
         Topmost="True"
@@ -35,11 +36,20 @@
                 <TextBlock Foreground="SteelBlue" Padding="0 0 20 0" VerticalAlignment="Center">Other:</TextBlock>
                 <TextBlock Text="{Binding Path=OtherCount, Mode=OneWay}" FontSize="50" Foreground="SteelBlue"/>
             </StackPanel>
-            
         </StackPanel>
 
-        <Rectangle Grid.Column="1" Fill="orange" Height="70" VerticalAlignment="Center" Margin="-100 0 0 0"/>
-        <local:NyanCatControl Grid.Column="1" Margin="{Binding Path=DistanceTravelledMargin, Mode=OneWay}"/>
+        <Rectangle Name="Rainbow" Grid.Column="1" Height="130" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                   Margin="{Binding Path=RainbowMargin, Mode=OneWay}">
+            <Rectangle.Fill>
+                <VisualBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 160 130" AlignmentX="Left">
+                    <VisualBrush.Visual>
+                        <Image gif:ImageBehavior.AnimatedSource="rainbow.gif" gif:ImageBehavior.AnimateInDesignMode="True"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
 
+        <local:NyanCatControl x:Name="NyanCat" Grid.Column="1"
+               Margin="{Binding Path=DistanceTravelledMargin, Mode=OneWay}"/>
     </Grid>
 </Window>

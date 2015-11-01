@@ -20,6 +20,14 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void FailingTest2ElectricBoogaloo()
+        {
+            WaitABit();
+            WaitABit();
+            Assert.Fail();
+        }
+
+        [TestMethod]
         public void PassingTest()
         {
             WaitABit();

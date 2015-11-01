@@ -56,16 +56,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="NyanCatControl.xaml.cs">
-      <DependentUpon>NyanCatControl.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="NyanCatWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NyanCatControl.xaml.cs">
+      <DependentUpon>NyanCatControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NyanCatWindow.xaml.cs">
       <DependentUpon>NyanCatWindow.xaml</DependentUpon>
     </Compile>
@@ -86,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="original.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rainbow.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

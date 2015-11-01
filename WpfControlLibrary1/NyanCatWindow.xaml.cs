@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace NyanCatDisplay
 {
@@ -31,8 +20,15 @@ namespace NyanCatDisplay
             FailedCount = 0;
             OtherCount = 0;
             _maxDistance = Convert.ToInt32(SystemParameters.VirtualScreenWidth);
+            MakeWindowDraggable();
 
             InitializeComponent();
+            OnPropertyChanged(string.Empty);
+        }
+
+        private void MakeWindowDraggable()
+        {
+            MouseLeftButtonDown += delegate { DragMove();};
         }
 
         public int PassedCount
@@ -68,8 +64,17 @@ namespace NyanCatDisplay
             get
             {
                 var totalRuns = PassedCount + FailedCount + OtherCount;
-                var distance = totalRuns * 100;
+                var distance = totalRuns * 200;
                 return new Thickness(distance, 0, 0, 0);
+            }
+        }
+
+        public Thickness RainbowMargin
+        {
+            get
+            {
+                var halfNyanCatWidth = (int)(NyanCat.ActualWidth/2);
+                return new Thickness(0, 0, halfNyanCatWidth, 0);
             }
         }
 

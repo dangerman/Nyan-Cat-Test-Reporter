@@ -11,7 +11,7 @@ namespace NyanCatReporterDataCollector
         private NyanCatWindow _nyanCat;
         private Thread _uiThread;
 
-        public void Render()
+        public void Start()
         {
             try
             {

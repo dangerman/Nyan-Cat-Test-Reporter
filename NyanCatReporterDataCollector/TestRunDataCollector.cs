@@ -58,7 +58,7 @@ namespace NyanCatReporterDataCollector
 
         private void OnSessionStart(object sender, SessionStartEventArgs e)
         {
-            _nyanCat.Render();
+            _nyanCat.Start();
             //TODO - Need to get Run Configuration to get the test count
         }
 

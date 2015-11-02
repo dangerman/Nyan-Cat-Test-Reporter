@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Xml;
 using Microsoft.VisualStudio.TestTools.Common;
 using Microsoft.VisualStudio.TestTools.Execution;
@@ -48,12 +47,11 @@ namespace NyanCatReporterDataCollector
             else
                 _stats.Other += 1;
 
-            _nyanCat.ShowStats(_stats);
+            _nyanCat.UpdateStats(_stats);
         }
 
         private void OnTestCaseStart(object sender, TestCaseStartEventArgs e)
         {
-            //throw new NotImplementedException();
         }
 
         private void OnSessionStart(object sender, SessionStartEventArgs e)
@@ -64,7 +62,7 @@ namespace NyanCatReporterDataCollector
 
         private void OnSessionEnd(object sender, SessionEndEventArgs e)
         {
-            _nyanCat.Clear();
+            _nyanCat.Stop();
         }
     }
 }

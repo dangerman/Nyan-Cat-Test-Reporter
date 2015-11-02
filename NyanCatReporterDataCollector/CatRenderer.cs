@@ -28,7 +28,7 @@ namespace NyanCatReporterDataCollector
         {
             _uiThread = new Thread(() =>
             {
-                _nyanCat = new NyanCatWindow();
+                _nyanCat = new NyanCatWindow(100);
                 _nyanCat.Show();
                 _nyanCat.Closed += (s, e) => _nyanCat.Dispatcher.InvokeShutdown();
                 Dispatcher.Run();
@@ -37,7 +37,7 @@ namespace NyanCatReporterDataCollector
             _uiThread.Start();
         }
 
-        public void Clear()
+        public void Stop()
         {
             try
             {
@@ -52,7 +52,7 @@ namespace NyanCatReporterDataCollector
 
         }
 
-        public void ShowStats(TestStats stats)
+        public void UpdateStats(TestStats stats)
         {
             try
             {

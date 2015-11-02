@@ -13,9 +13,11 @@ namespace NyanCatDisplay
         private int _failedCount;
         private int _otherCount;
         private int _maxDistance;
+        private int _flyingSpeed;
 
-        public NyanCatWindow()
+        public NyanCatWindow(int flyingSpeed)
         {
+            _flyingSpeed = flyingSpeed;
             PassedCount = 0;
             FailedCount = 0;
             OtherCount = 0;
@@ -64,8 +66,9 @@ namespace NyanCatDisplay
             get
             {
                 var totalRuns = PassedCount + FailedCount + OtherCount;
-                var distance = totalRuns * 200;
-                return new Thickness(distance, 0, 0, 0);
+                var distance = totalRuns *_flyingSpeed;
+                return (distance < _maxDistance) ? new Thickness(distance, 0, 0, 0)
+                                                : new Thickness(_maxDistance, 0, 0, 0);
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 
 namespace UnitTestProject1
@@ -23,14 +22,12 @@ namespace UnitTestProject1
         public void FailingTest2ElectricBoogaloo()
         {
             WaitABit();
-            WaitABit();
             Assert.Fail();
         }
 
         [TestMethod]
         public void PassingTest()
         {
-            WaitABit();
             WaitABit();
             Assert.IsTrue(true);
         }
@@ -39,14 +36,13 @@ namespace UnitTestProject1
         public void PassingTest2()
         {
             WaitABit();
-            WaitABit();
-            WaitABit();
             Assert.IsTrue(true);
         }
 
         [TestMethod]
         public void PassingTest3()
         {
+            WaitABit();
             Assert.IsTrue(true);
         }
     }

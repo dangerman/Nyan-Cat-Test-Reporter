@@ -38,18 +38,7 @@
             </StackPanel>
         </StackPanel>
 
-        <Rectangle Name="Rainbow" Grid.Column="1" Height="130" VerticalAlignment="Center" HorizontalAlignment="Stretch"
-                   Margin="{Binding Path=RainbowMargin, Mode=OneWay}">
-            <Rectangle.Fill>
-                <VisualBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 160 130" AlignmentX="Left">
-                    <VisualBrush.Visual>
-                        <Image gif:ImageBehavior.AnimatedSource="rainbow.gif" gif:ImageBehavior.AnimateInDesignMode="True"/>
-                    </VisualBrush.Visual>
-                </VisualBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-
         <local:NyanCatControl x:Name="NyanCat" Grid.Column="1"
-               Margin="{Binding Path=DistanceTravelledMargin, Mode=OneWay}"/>
+                              DistanceTravelled="{Binding Path=DistanceTravelled, Mode=OneWay}"/>
     </Grid>
 </Window>

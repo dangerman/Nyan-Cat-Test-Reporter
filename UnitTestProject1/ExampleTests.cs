@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 
-namespace UnitTestProject1
+namespace ExampleTestProject
 {
     [TestClass]
-    public class UnitTest1
+    public class ExampleTests
     {
         private void WaitABit()
         {

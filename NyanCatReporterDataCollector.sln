@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanCatReporterDataCollector", "NyanCatReporterDataCollector\NyanCatReporterDataCollector.csproj", "{6BF56D44-852D-4E17-ADBD-682DFDBB4851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{89285E70-E1CA-4B3F-9476-251F4B9F8607}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleTestProject", "UnitTestProject1\ExampleTestProject.csproj", "{89285E70-E1CA-4B3F-9476-251F4B9F8607}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanCatDisplay", "WpfControlLibrary1\NyanCatDisplay.csproj", "{AE0FDC81-5D6A-4487-9ED3-495600E6B932}"
 EndProject

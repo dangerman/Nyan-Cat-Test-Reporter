@@ -58,9 +58,6 @@
     <Compile Include="TestStats.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="original.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\WpfControlLibrary1\NyanCatDisplay.csproj">
       <Project>{ae0fdc81-5d6a-4487-9ed3-495600e6b932}</Project>
       <Name>NyanCatDisplay</Name>

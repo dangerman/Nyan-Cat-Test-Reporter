@@ -61,23 +61,13 @@ namespace NyanCatDisplay
             }
         }
 
-        public Thickness DistanceTravelledMargin
+        public int DistanceTravelled
         {
             get
             {
                 var totalRuns = PassedCount + FailedCount + OtherCount;
-                var distance = totalRuns *_flyingSpeed;
-                return (distance < _maxDistance) ? new Thickness(distance, 0, 0, 0)
-                                                : new Thickness(_maxDistance, 0, 0, 0);
-            }
-        }
-
-        public Thickness RainbowMargin
-        {
-            get
-            {
-                var halfNyanCatWidth = (int)(NyanCat.ActualWidth/2);
-                return new Thickness(0, 0, halfNyanCatWidth, 0);
+                var distance = totalRuns * _flyingSpeed;
+                return (distance < _maxDistance) ? distance : _maxDistance;
             }
         }
 

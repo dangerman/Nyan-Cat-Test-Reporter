@@ -8,7 +8,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Image gif:ImageBehavior.AnimatedSource="original.gif"
-               gif:ImageBehavior.AnimateInDesignMode="True" Stretch="None"/>
+        <Rectangle Name="Rainbow" Grid.Column="1" Height="130" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                   Margin="{Binding Path=RainbowMargin, Mode=OneWay}">
+            <Rectangle.Fill>
+                <VisualBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 160 130" AlignmentX="Left">
+                    <VisualBrush.Visual>
+                        <Image gif:ImageBehavior.AnimatedSource="rainbow.gif" gif:ImageBehavior.AnimateInDesignMode="True"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Image Name="NyanCat" gif:ImageBehavior.AnimatedSource="original.gif"
+               gif:ImageBehavior.AnimateInDesignMode="True" Stretch="None"
+               Margin="{Binding Path=DistanceTravelledMargin, Mode=OneWay}"/>
     </Grid>
 </UserControl>

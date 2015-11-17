@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,7 +8,7 @@ namespace NyanCatDisplay
     /// <summary>
     /// Interaction logic for NyanCatControl.xaml
     /// </summary>
-    public partial class NyanCatControl : UserControl
+    public partial class NyanCatControl : UserControl, INotifyPropertyChanged
     {
         public NyanCatControl()
         {
@@ -20,13 +21,18 @@ namespace NyanCatDisplay
             set
             {
                 SetValue(DistanceTravelledProperty, value);
-                OnPropertyChanged(string.Empty);
             }
         }
 
         public static readonly DependencyProperty DistanceTravelledProperty =
             DependencyProperty.Register("DistanceTravelled", typeof(int), typeof(NyanCatControl),
-                                        new PropertyMetadata(0));
+                                        new PropertyMetadata(0,OnDistanceChanged));
+
+        private static void OnDistanceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (NyanCatControl) d;
+            control.OnPropertyChanged(string.Empty);
+        }
 
         public Thickness RainbowMargin
         {

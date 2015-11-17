@@ -61,7 +61,7 @@ namespace NyanCatDisplay
             }
         }
 
-        public int DistanceTravelled
+        public int Distance
         {
             get
             {

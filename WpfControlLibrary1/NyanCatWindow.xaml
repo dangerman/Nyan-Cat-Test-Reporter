@@ -6,12 +6,14 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:NyanCatDisplay"
         mc:Ignorable="d"
-        Title="NyanCatWindow" Height="400" Width="600"
+        d:DesignHeight ="400" d:DesignWidth="600"
+        Title="NyanCatWindow"
         AllowsTransparency="True"
         WindowStyle="None"
         Topmost="True"
         SizeToContent="Width"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Name="CatWindow">
     <Window.Background>
         <DrawingBrush Opacity="0"/>
     </Window.Background>
@@ -22,23 +24,23 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
             <StackPanel.Background>
-                <SolidColorBrush Color="Gray" Opacity="0.8"/>
+                <SolidColorBrush Color="Gray"/>
             </StackPanel.Background>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="Green" Padding="0 0 20 0" VerticalAlignment="Center">Passed:</TextBlock>
+                <TextBlock Foreground="Green" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="50">Pass:</TextBlock>
                 <TextBlock Text="{Binding Path=PassedCount, Mode=OneWay}" FontSize="50" Foreground="Green"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="Red" Padding="0 0 20 0" VerticalAlignment="Center">Failed:</TextBlock>
+                <TextBlock Foreground="Red" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="50">Fail:</TextBlock>
                 <TextBlock Text="{Binding Path=FailedCount, Mode=OneWay}" FontSize="50" Foreground="Red"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="SteelBlue" Padding="0 0 20 0" VerticalAlignment="Center">Other:</TextBlock>
+                <TextBlock Foreground="SteelBlue" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="50">Other:</TextBlock>
                 <TextBlock Text="{Binding Path=OtherCount, Mode=OneWay}" FontSize="50" Foreground="SteelBlue"/>
             </StackPanel>
         </StackPanel>
 
         <local:NyanCatControl x:Name="NyanCat" Grid.Column="1"
-                              DistanceTravelled="{Binding Path=DistanceTravelled, Mode=OneWay}"/>
+                              DistanceTravelled="{Binding Path=Distance, ElementName=CatWindow, Mode=OneWay}"/>
     </Grid>
 </Window>

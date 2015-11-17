@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleTestProject", "UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanCatDisplay", "WpfControlLibrary1\NyanCatDisplay.csproj", "{AE0FDC81-5D6A-4487-9ED3-495600E6B932}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanCatTests", "NyanCatTests\NyanCatTests.csproj", "{65AA9C97-98AB-4C72-9E6C-CDD540BB34E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AE0FDC81-5D6A-4487-9ED3-495600E6B932}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0FDC81-5D6A-4487-9ED3-495600E6B932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0FDC81-5D6A-4487-9ED3-495600E6B932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65AA9C97-98AB-4C72-9E6C-CDD540BB34E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65AA9C97-98AB-4C72-9E6C-CDD540BB34E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65AA9C97-98AB-4C72-9E6C-CDD540BB34E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65AA9C97-98AB-4C72-9E6C-CDD540BB34E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

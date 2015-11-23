@@ -21,6 +21,7 @@ whilst your tests are running :3
 * Open your test project in VS.
 * From the menu, select **Test** > **Test Settings** > **Select Test Settings File**
 * Choose the `.runsettings` file and click **Open**.
+
 #### Configuring your test classes
 * Add a cleanup method like `CloseTestDiscoveryEngine()` from from the example project into your TestClass.
   * This is a workaround for a problem where you can't use Nyan Cat twice in a row.

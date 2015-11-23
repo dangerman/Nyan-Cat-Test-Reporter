@@ -10,7 +10,7 @@ whilst your tests are running :3
 
  If you're Administrator, the post build script should copy the files:
  * `NyanCatReporterDataCollector\bin\Release\NyanCatReporterDataCollector.dll`
- * `NyanCatReporterDataCollector\bin\Release\WpfControlLibrary1.dll`
+ * `NyanCatReporterDataCollector\bin\Release\NyanCatDisplay.dll`
 
  into `%PROGRAMFILES(X86)%\Microsoft Visual Studio 14.0\Common7\IDE\PrivateAssemblies\DataCollectors\`.
  Otherwise you'll have to do it yourself.
@@ -21,9 +21,6 @@ whilst your tests are running :3
 * Open your test project in VS.
 * From the menu, select **Test** > **Test Settings** > **Select Test Settings File**
 * Choose the `.runsettings` file and click **Open**.
-
-## 🐛 Known issues
- * Can't run tests twice in a row. Output says:
-```
-Data collection will be stopped for current test run. WCF Communication channel with DataCollection service is unavailable.
-```
+#### Configuring your test classes
+* Add a cleanup method like `CloseTestDiscoveryEngine()` from from the example project into your TestClass.
+  * This is a workaround for a problem where you can't use Nyan Cat twice in a row.

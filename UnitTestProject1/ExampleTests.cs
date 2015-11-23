@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 using System.Threading;
 
 namespace ExampleTestProject
@@ -44,6 +45,16 @@ namespace ExampleTestProject
         {
             WaitABit();
             Assert.IsTrue(true);
+        }
+
+        [AssemblyCleanup]
+        public static void CloseTestDiscoveryEngine()
+        {
+            var processes = Process.GetProcessesByName("vstest.discoveryengine.x86");
+            foreach (var process in processes)
+            {
+                process.Kill();
+            }
         }
     }
 }

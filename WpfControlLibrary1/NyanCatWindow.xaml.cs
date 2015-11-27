@@ -21,7 +21,7 @@ namespace NyanCatDisplay
             PassedCount = 0;
             FailedCount = 0;
             OtherCount = 0;
-            _maxDistance = Convert.ToInt32(SystemParameters.VirtualScreenWidth);
+            _maxDistance = Convert.ToInt32(SystemParameters.PrimaryScreenWidth);
             MakeWindowDraggable();
 
             InitializeComponent();

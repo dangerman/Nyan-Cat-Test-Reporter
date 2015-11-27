@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Windows;
 using NyanCatDisplay;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace NyanCatTests
 {
@@ -51,6 +53,26 @@ namespace NyanCatTests
             var expectedDistance = 200;
 
             Assert.AreEqual(expectedDistance, _window.Distance);
+        }
+
+        [TestMethod]
+        public void CannotTravelTooFarOffTheScreen()
+        {
+            _window.PassedCount = 9000;
+            var totalWidthOfTheScreen = SystemParameters.PrimaryScreenWidth;
+            var distance = _window.Distance;
+
+            Assert.IsTrue(distance <= totalWidthOfTheScreen, "Travels too far beyond the screen");
+        }
+
+        [AssemblyCleanup]
+        public static void CloseTestDiscoveryEngine()
+        {
+            var processes = Process.GetProcessesByName("vstest.discoveryengine.x86");
+            foreach (var process in processes)
+            {
+                process.Kill();
+            }
         }
     }
 }

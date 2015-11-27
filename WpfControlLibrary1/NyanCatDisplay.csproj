@@ -76,6 +76,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Fonts\pressstart2p\PressStart2P.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,9 +90,13 @@
   <ItemGroup>
     <Resource Include="rainbow.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\pressstart2p\FONTLOG.txt" />
+    <Resource Include="Fonts\pressstart2p\LICENSE.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>taskkill /F /im "vstest.discoveryengine.x86.exe" &amp;&amp; copy /y "$(TargetPath)" "$(DevEnvDir)PrivateAssemblies\DataCollectors\$(TargetFileName)"</PostBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetPath)" "$(DevEnvDir)PrivateAssemblies\DataCollectors\$(TargetFileName)" &amp;&amp; copy /y "$(TargetDir)\WpfAnimatedGif.dll" "$(DevEnvDir)PrivateAssemblies\DataCollectors\WpfAnimatedGif.dll"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -27,16 +27,22 @@
                 <SolidColorBrush Color="Gray"/>
             </StackPanel.Background>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="Green" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="50">Pass:</TextBlock>
-                <TextBlock Text="{Binding Path=PassedCount, Mode=OneWay}" FontSize="50" Foreground="Green"/>
+                <TextBlock Foreground="Green" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="30"
+                           FontFamily="./Fonts/pressstart2p/#Press Start 2P">Pass:</TextBlock>
+                <TextBlock Text="{Binding Path=PassedCount, Mode=OneWay}" FontSize="30" Foreground="Green"
+                           FontFamily="./Fonts/pressstart2p/#Press Start 2P"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="Red" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="50">Fail:</TextBlock>
-                <TextBlock Text="{Binding Path=FailedCount, Mode=OneWay}" FontSize="50" Foreground="Red"/>
+                <TextBlock Foreground="Red" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="30"
+                           FontFamily="./Fonts/pressstart2p/#Press Start 2P">Fail:</TextBlock>
+                <TextBlock Text="{Binding Path=FailedCount, Mode=OneWay}" FontSize="30" Foreground="Red"
+                           FontFamily="./Fonts/pressstart2p/#Press Start 2P"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="SteelBlue" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="50">Other:</TextBlock>
-                <TextBlock Text="{Binding Path=OtherCount, Mode=OneWay}" FontSize="50" Foreground="SteelBlue"/>
+                <TextBlock Foreground="SteelBlue" Padding="10 0 20 0" VerticalAlignment="Center" FontSize="30"
+                           FontFamily="./Fonts/pressstart2p/#Press Start 2P">Other:</TextBlock>
+                <TextBlock Text="{Binding Path=OtherCount, Mode=OneWay}" FontSize="30" Foreground="SteelBlue"
+                           FontFamily="./Fonts/pressstart2p/#Press Start 2P"/>
             </StackPanel>
         </StackPanel>
 
